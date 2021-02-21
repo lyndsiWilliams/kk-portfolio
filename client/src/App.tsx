@@ -9,7 +9,7 @@ import Gallery from './components/Gallery';
 import Blog from './components/Blog';
 // Styling
 import './App.css';
-// import './styles/styles.css';
+import './styles/styles.css';
 
 function App() {
   return (

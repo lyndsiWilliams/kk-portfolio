@@ -1,0 +1,4 @@
+.home {
+  @include fullScreenCentered(column);
+  background-color: $kkMint;
+}

@@ -1,0 +1,18 @@
+@import './variables';
+@import './mixins';
+// Components
+@import './navBar';
+@import './home';
+@import './about';
+@import './gallery';
+@import './shortStories';
+@import './blog';
+
+body {
+  font-family: $textFont;
+
+  h1 {
+    font-family: $bigFont;
+    font-size: 3em;
+  }
+}

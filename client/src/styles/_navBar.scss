@@ -1,0 +1,12 @@
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $kkDarkRed;
+  height: 5vh;
+  a {
+    color: white;
+    text-decoration: none;
+    padding-right: 3%;
+  }
+}
