@@ -2,10 +2,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: $kkDarkRed;
+  background-color: $kkBackgroundSecondary;
   height: 5vh;
   a {
-    color: white;
+    color: $kkLighter;
     text-decoration: none;
     padding-right: 3%;
   }

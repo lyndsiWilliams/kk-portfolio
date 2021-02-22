@@ -1,9 +1,9 @@
 .blog {
   @include fullScreenCentered(row);
-  background-color: $kkMint;
+  background-color: $kkBackgroundMain;
 
   button{
-    background-color: $kkDarkGreen;
+    background-color: $kkAccent;
     &:active {
       // Mimics "real button" press
       transform: scale(.99);
