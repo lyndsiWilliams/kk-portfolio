@@ -15,7 +15,7 @@ const { buildASTSchema } = require('graphql');
 // Express app creation
 const app = express();
 // Database
-const db = require('./db.json');
+const { POSTS } = require('./db.json');
 // Middleware
 app.use(cors());
 
@@ -96,8 +96,8 @@ const schema = buildASTSchema(gql`
 const mapPost = (post, id) => ({ id, ...post });
 
 const root = {
-  posts: () => db.posts.map(mapPost),
-  post: ({ id }) => mapPost(db.posts[id], id),
+  posts: () => POSTS.map(mapPost),
+  post: ({ id }) => mapPost(POSTS[id], id),
 };
 
 // GraphQL middleware magic
