@@ -13,7 +13,7 @@
 }
 
 .nav-bar a {
-  color: #46484f;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   padding-right: 3%;
 }
