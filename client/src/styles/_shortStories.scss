@@ -1,0 +1,14 @@
+.short-stories {
+  @include fullScreenCentered(row);
+  background-color: $kkBackgroundMain;
+
+  .ss-title-card {
+    @include flexCenter();
+    flex-direction: column;
+    width: 55vw;
+    padding: 2%;
+    background-color: $fadedCard;
+    border: solid $kkAccent 3px;
+    border-radius: 10px;
+  }
+}

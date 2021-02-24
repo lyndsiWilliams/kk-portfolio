@@ -1,0 +1,12 @@
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $kkBackgroundSecondary;
+  height: 5vh;
+  a {
+    color: $fadedCard;
+    text-decoration: none;
+    padding-right: 3%;
+  }
+}

@@ -1,0 +1,12 @@
+.blog {
+  @include fullScreenCentered(row);
+  background-color: $kkBackgroundMain;
+
+  button{
+    background-color: $kkAccent;
+    &:active {
+      // Mimics "real button" press
+      transform: scale(.99);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.about {
+  @include fullScreenCentered(row);
+  background-color: $kkBackgroundMain;
+}

@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "POSTS": [
     { "id": 0, "title": "Example Title", "content": "Example content" }
   ]
 }
