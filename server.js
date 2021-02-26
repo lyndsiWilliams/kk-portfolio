@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 // Database
 const { POSTS } = require('./db.json');
 
+// Come back to this and fix it, this is a messss
 const startServer = async () => {
   // Express app creation
   const app = express();
