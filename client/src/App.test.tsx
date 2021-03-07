@@ -1,7 +1,8 @@
-import React from 'react';
+// Package imports
 import { render } from '@testing-library/react';
+// Component
 import App from './App';
 
-test('renders the App component', () => {
+it('renders the App component', () => {
   render(<App />);
 });
