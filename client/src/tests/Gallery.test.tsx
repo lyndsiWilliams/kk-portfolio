@@ -11,7 +11,7 @@ describe('Gallery component', () => {
     render(<Gallery />);
     
     const placeholderText = screen.getByRole('heading', {
-      name: /this is the gallery page!/i
+      name: /this is the gallery page!/i,
     });
     expect(placeholderText).toBeVisible();
   });

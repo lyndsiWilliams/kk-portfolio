@@ -11,7 +11,7 @@ describe('About component', () => {
     render(<About />);
     
     const placeholderText = screen.getByRole('heading', {
-      name: /this is the about page!/i
+      name: /this is the about page!/i,
     });
     expect(placeholderText).toBeVisible();
   });
