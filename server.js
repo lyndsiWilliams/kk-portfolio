@@ -10,7 +10,7 @@ app.use(cors());
 /**
  * METHOD: GET
  * ROUTE: /post
- * PURPOSE: Get all tasks
+ * PURPOSE: Get all posts
  */
 app.get('/post', async (req, res) => {
   const posts = await db('posts');
@@ -20,7 +20,7 @@ app.get('/post', async (req, res) => {
 /**
  * METHOD: POST
  * ROUTE: /post
- * PURPOSE: Create new task
+ * PURPOSE: Create new post
  */
 app.post('/post', async (req, res) => {
   const { task } = req.body;
@@ -31,10 +31,10 @@ app.post('/post', async (req, res) => {
     });
     
   if (newPost === 1) {
-    return res.status(201).json({ message: 'post created successfully' });
+    return res.status(201).json({ message: '.: Post created successfully :.' });
   }
 });
 
 const PORT = process.env.PORT || 3500;
 
-app.listen(PORT, () => console.log(`.:App listening on port ${PORT}:.`));
+app.listen(PORT, () => console.log(`.: App listening on port ${PORT} :.`));
