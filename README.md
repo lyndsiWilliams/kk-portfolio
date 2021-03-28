@@ -2,3 +2,4 @@
 
 ## Deployed at:
 - Front end: https://kathleen-kidder.vercel.app/
+- Back end: https://kathleen-kidder.herokuapp.com/
