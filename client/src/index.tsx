@@ -1,19 +1,15 @@
 // Package imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloProvider } from '@apollo/client';
 // Styling
 import './index.css';
 // Component
 import App from './App';
-import client from './apollo';
 // Other
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <App />,
   document.getElementById('root')
 );
 
