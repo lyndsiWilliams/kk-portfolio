@@ -1,33 +1,30 @@
-import { gql, useQuery } from '@apollo/client';
+// Package imports
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Blog = () => {
-  const getPosts = gql`
-    query GetPosts {
-      posts {
-        id
-        title
-        content
-      }
-    }
-  `;
-  
-  const { data, loading, error } = useQuery(getPosts);
+  // Post type declaration
+  interface Post {
+    id: number;
+    title: string;
+    content: string;
+  };
+  // Local state stores the blog posts
+  const [posts, setPosts] = useState<Post[]>();
 
-  if (loading) {
-    return <p>Loading...</p>;
-  } else if (error) {
-    console.log(error);
-    return <p>ERROR</p>;
-  } else if (!data) {
-    return <p>Not found</p>;
-  }
-
-  console.log(data.posts);
+  // Grab the list of blog posts on page load
+  useEffect(() => {
+    axios.get('http://localhost:3500/post')
+      .then(res => {
+        setPosts(res.data.posts);
+      })
+      .catch(err => console.log(err));
+  }, []);
 
   return (
     <div className="blog" style={{ flexDirection: "column" }}>
       <h1>This is the Blog page!</h1>
-      {data.posts.map((post: {id: number, title: String, content: String}) => (
+      {posts?.map((post: {id: number, title: string, content: string}) => (
         <div key={post.id}>
           <p>{post.title}</p>
           <p>{post.content}</p>

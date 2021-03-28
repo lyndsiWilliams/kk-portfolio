@@ -1,60 +1,40 @@
-// Package imports
 const express = require('express');
 const cors = require('cors');
-const { graphqlHTTP } = require('express-graphql');
-const gql = require('graphql-tag');
-const { buildASTSchema } = require('graphql');
-const mongoose = require('mongoose');
-// Database
-const { POSTS } = require('./db.json');
+const db = require('./data/db.js');
 
-// Come back to this and fix it, this is a messss
-const startServer = async () => {
-  // Express app creation
-  const app = express();
-  // Middleware
-  app.use(cors());
+const app = express();
 
-  // Mongoose setup
-  await mongoose.connect('mongodb://localhost:27017/test3', {useNewUrlParser: true});
+app.use(express.json());
+app.use(cors());
 
-  const Cat = mongoose.model('Cat', { name: String });
+/**
+ * METHOD: GET
+ * ROUTE: /post
+ * PURPOSE: Get all posts
+ */
+app.get('/post', async (req, res) => {
+  const posts = await db('posts');
+  res.json({ posts });
+});
 
-  const kitty = new Cat({ name: 'Zildjian' });
-  kitty.save().then(() => console.log('meow'));
+/**
+ * METHOD: POST
+ * ROUTE: /post
+ * PURPOSE: Create new post
+ */
+app.post('/post', async (req, res) => {
+  const { task } = req.body;
+  const newPost = await db('posts')
+    .insert(task)
+    .then(item => {
+      return item.rowCount;
+    });
+    
+  if (newPost === 1) {
+    return res.status(201).json({ message: '.: Post created successfully :.' });
+  }
+});
 
-  // GraphQL schema
+const PORT = process.env.PORT || 3500;
 
-  const schema = buildASTSchema(gql`
-    type Query {
-      posts: [Post]
-      post(id: ID!): Post
-    }
-
-    type Post {
-      id: ID
-      title: String
-      content: String
-    }
-  `);
-
-  const mapPost = (post, id) => ({ id, ...post });
-
-  const root = {
-    posts: () => POSTS.map(mapPost),
-    post: ({ id }) => mapPost(POSTS[id], id),
-  };
-
-  // GraphQL middleware magic
-  app.use('/graphql', graphqlHTTP({
-    schema,
-    rootValue: root,
-    graphiql: true
-  }));
-
-  // Port/server creation
-  const PORT = process.env.PORT || 5309;
-  app.listen(PORT, () => console.log(`\n.: The server is running on port: ${PORT} :.\n`));
-};
-
-startServer();
+app.listen(PORT, () => console.log(`.: App listening on port ${PORT} :.`));
