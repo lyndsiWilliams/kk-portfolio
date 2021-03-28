@@ -14,7 +14,7 @@ const Blog = () => {
 
   // Grab the list of blog posts on page load
   useEffect(() => {
-    axios.get('http://localhost:3500/post')
+    axios.get('https://kathleen-kidder.herokuapp.com/post')
       .then(res => {
         setPosts(res.data.posts);
       })
