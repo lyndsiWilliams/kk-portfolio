@@ -30,6 +30,6 @@ describe('Home component', () => {
     This returns "none", is OS detection in tests even possible?
     */
     // await screen.findByText(/mac os/i);
-    expect.anything();
+    expect.anything();  // Make linter happy
   });
 });
