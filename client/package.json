@@ -45,6 +45,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.12.13",
     "@types/jest": "^26.0.21",
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "cypress": "^7.0.1"
   }
 }
