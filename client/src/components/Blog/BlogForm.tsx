@@ -10,13 +10,13 @@ interface Values {
   modifier: string;
 }
 
-interface BlogFormProps {
+interface BlogCreateFormProps {
   visible: boolean;
   onCreate: (values: Values) => void;
   onCancel: () => void;
 }
 
-const BlogForm: React.FC<BlogFormProps> = ({
+const BlogCreateForm: React.FC<BlogCreateFormProps> = ({
   visible,
   onCreate,
   onCancel,
@@ -58,7 +58,7 @@ const BlogForm: React.FC<BlogFormProps> = ({
         <Form.Item name="description" label="Description">
           <Input type="textarea" />
         </Form.Item>
-        <Form.Item name="modifier" style={{ marginBottom="0" }}>
+        <Form.Item name="modifier" style={{ marginBottom: "0" }}>
           <Radio.Group>
             <Radio value="public">Public</Radio>
             <Radio value="private">Private</Radio>
@@ -69,7 +69,7 @@ const BlogForm: React.FC<BlogFormProps> = ({
   );
 };
 
-const CollectionsPage = () => {
+const BlogForm = () => {
   const [visible, setVisible] = useState(false);
 
   const onCreate = (values: any) => {
@@ -87,7 +87,7 @@ const CollectionsPage = () => {
       >
         New Collection
       </Button>
-      <BlogForm
+      <BlogCreateForm
         visible={visible}
         onCreate={onCreate}
         onCancel={() => {
