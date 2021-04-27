@@ -1,6 +1,5 @@
 // Package imports
 import { useState } from 'react';
-import axios from 'axios';
 // Component
 import BlogCreateForm from './BlogCreateForm';
 // Styling
@@ -14,6 +13,9 @@ const BlogForm = () => {
     setVisible(false);
   };
 
+  const button = document.querySelector('#create-post-button');
+  console.log(button);
+
   return (
     <div>
       <Button
@@ -21,8 +23,10 @@ const BlogForm = () => {
         onClick={() => {
           setVisible(true);
         }}
+        style={{ border: "2px solid black" }}
+        id="create-post-button"
       >
-        New Collection
+        New Post
       </Button>
       <BlogCreateForm
         visible={visible}

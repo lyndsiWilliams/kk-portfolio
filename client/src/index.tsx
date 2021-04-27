@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Styling
 import './index.css';
+import 'antd/dist/antd.css';
 // Component
 import App from './App';
 // Other
