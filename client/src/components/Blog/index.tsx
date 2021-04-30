@@ -16,9 +16,10 @@ const Blog = () => {
 
   // Grab the list of blog posts on page load
   useEffect(() => {
-    axios.get('https://kathleen-kidder.herokuapp.com/post')
+    axios.get('https://sheet.best/api/sheets/1ed47246-bc99-462a-99cf-89b45e80e34c/tabs/posts')
       .then(res => {
-        setPosts(res.data.posts);
+        console.log(res.data);
+        setPosts(res.data);
       })
       .catch(err => console.log(err));
   }, []);
