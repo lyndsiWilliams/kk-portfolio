@@ -13,8 +13,8 @@ const BlogForm = () => {
     setVisible(false);
   };
 
-  const button = document.querySelector('#create-post-button');
-  console.log(button);
+  const postButton = document.querySelector('#create-post-button');
+  console.log(postButton?.attributes)
 
   return (
     <div>
@@ -23,7 +23,7 @@ const BlogForm = () => {
         onClick={() => {
           setVisible(true);
         }}
-        style={{ border: "2px solid black" }}
+        style={{ border: "2px solid black"}}
         id="create-post-button"
       >
         New Post
