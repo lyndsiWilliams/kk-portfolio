@@ -131,6 +131,7 @@
 
 .blog button {
   background-color: #23252d;
+  margin-bottom: 20%;
 }
 
 .blog button:active {
@@ -140,6 +141,14 @@
 
 body {
   font-family: "Noticia Text", serif;
+}
+
+body .ant-btn-primary {
+  border: 2px solid black;
+}
+
+body .ant-btn-primary:hover, body .ant-btn-primary :focus, body .ant-btn-primary :active {
+  background-color: rebeccapurple;
 }
 
 body h1 {

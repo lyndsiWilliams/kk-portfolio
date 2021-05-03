@@ -1,6 +1,8 @@
 // Package imports
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+// Component
+import BlogForm from './BlogForm';
 
 const Blog = () => {
   // Post type declaration
@@ -24,6 +26,7 @@ const Blog = () => {
   return (
     <div className="blog" style={{ flexDirection: "column" }}>
       <h1>This is the Blog page!</h1>
+      <BlogForm />
       {posts?.map((post: {id: number, title: string, content: string}) => (
         <div key={post.id}>
           <p>{post.title}</p>
