@@ -1,3 +1,6 @@
+// Package imports
+import axios from 'axios';
+// Styling
 import { Upload, message } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 
@@ -5,12 +8,14 @@ const { Dragger } = Upload;
 
 const props = {
   name: 'file',
-  multiple: true,
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  multiple: false,
+  action: 'https://sheet.best/api/sheets/1ed47246-bc99-462a-99cf-89b45e80e34c/tabs/photos',
   onChange(info: any) {
     const { status } = info.file;
+    console.log('info', info, 'status', status)
     if (status !== 'uploading') {
       console.log(info.file, info.fileList);
+      // axios.post('https://sheet.best/api/sheets/1ed47246-bc99-462a-99cf-89b45e80e34c/tabs/photos', info.file)
     }
     if (status === 'done') {
       message.success(`${info.file.name} file uploaded successfully.`);

@@ -15,13 +15,13 @@ const Blog = () => {
   const [posts, setPosts] = useState<Post[]>();
 
   // Grab the list of blog posts on page load
-  useEffect(() => {
-    axios.get('https://kathleen-kidder.herokuapp.com/post')
-      .then(res => {
-        setPosts(res.data.posts);
-      })
-      .catch(err => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios.get('https://sheet.best/api/sheets/1ed47246-bc99-462a-99cf-89b45e80e34c/tabs/posts')
+  //     .then(res => {
+  //       setPosts(res.data);
+  //     })
+  //     .catch(err => console.log(err));
+  // }, []);
 
   return (
     <div className="blog" style={{ flexDirection: "column" }}>

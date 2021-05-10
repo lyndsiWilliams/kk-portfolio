@@ -12,7 +12,7 @@ body {
   .ant-btn-primary {
     border: 2px solid black;
 
-    &:hover, :focus, :active {
+    &:hover, &:focus, &:focus-within, &:focus-visible, &:active, &:visited, &:enabled, &:optional {
       background-color: rebeccapurple;
     }
   }
